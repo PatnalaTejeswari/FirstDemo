@@ -1,0 +1,67 @@
+#a="hi teju" [::-1]
+#print(a)
+'''import os
+filename="C:\\Users\\tpatnalx\\OneDrive - Intel Corporation\\Desktop\\firsttext.txt"
+f=open(filename)
+content = f.read()
+print(content)
+content_1 = content[::-1]
+print(content_1)
+f.close()
+'''
+# --------------------
+'''
+import os
+f= open("C:\\Users\\tpatnalx\\OneDrive - Intel Corporation\\Desktop\\firsttext.txt", "r+")
+f.seek(0)
+f.truncate()
+import string
+a=(list(string.ascii_lowercase))
+b=(list(string.ascii_uppercase))
+for i in range (1,100001):
+    num=print(i)
+
+with open("C:\\Users\\tpatnalx\\OneDrive - Intel Corporation\\Desktop\\firsttext.txt", "w") as file:
+    file.write('\n'.join(a))
+    file.write('\n'.join(b))
+    file.write('\n'.join(str(num)))
+f.close()
+'''
+
+'''
+import shutil
+import os
+src_dir= "C:\\Users\\tpatnalx\\OneDrive - Intel Corporation\\Desktop\\fol1"
+dest_dir="C:\\Users\\tpatnalx\\OneDrive - Intel Corporation\\Desktop\\fol2"
+files= os.listdir(src_dir)
+#files1=os.listdir(dest_dir)
+print(files)
+#print(files1)
+shutil.copytree(src_dir, dest_dir)
+'''
+
+
+'''import os
+import paramiko
+ssh = paramiko.SSHClient()
+ssh.load_host_keys(os.path.expanduser(os.path.join("~", ".ssh", "known_hosts")))
+ssh.connect(hostname="hypveskc019", username="Administrator", password="folsom_1")
+sftp = ssh.open_sftp()
+sftp.put("C:\\Users\\tpatnalx\\OneDrive - Intel Corporation\\trailrunpython", "\\hypveskc019\\Users\\Administrator\Desktop\\tejeswari")
+sftp.close()
+ssh.close()
+
+
+# print(paramiko.__version__)
+'''
+
+import os
+import socket
+import paramiko
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect(hostname='hypveskc019',username='Administrator',password='folsom_1')
+socket.getaddrinfo('localhost', 8080)
+sftp.client=ssh.open_sftp()
+sftp_client.close()
+ssh.close()
